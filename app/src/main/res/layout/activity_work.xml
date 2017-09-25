@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maciek.facebooktest.WorkActivity">
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:drawableLeft="@android:drawable/ic_menu_send"
+        android:text="Przejdz dalej" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textViewToRent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="7"
+            android:text="Do wynajęcia:"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/editTextSpot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:ems="10"
+            android:hint="2.167"
+            android:inputType="numberDecimal"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textViewValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:text="Cena za wynajm [zł/msc]"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textViewSpotNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="Numer miejsca:"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textViewHasSpot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="Masz miejsce postojowe?"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxHasSpot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_column="1"
+            android:layout_row="4" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_row="0"
+            android:layout_rowSpan="2"
+            android:text="Coś tam coś tam"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:ems="10"
+            android:hint="Jan Kowalski"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="Imie i nazwisko:"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editTextValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="8"
+            android:ems="10"
+            android:hint="340,3"
+            android:inputType="numberDecimal"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textViewLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:text="Etap: "
+            android:textColor="@android:color/holo_purple"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/editTextLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="6"
+            android:ems="10"
+            android:hint="2"
+            android:inputType="numberSigned"
+            android:visibility="invisible" />
+
+        <CheckBox
+            android:id="@+id/checkBoxToRent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="7"
+            android:visibility="invisible" />
+    </GridLayout>
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "522943511763",
+    "firebase_url": "https://facebooktest-a835d.firebaseio.com",
+    "project_id": "facebooktest-a835d",
+    "storage_bucket": "facebooktest-a835d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522943511763:android:b79427950ac0abba",
+        "android_client_info": {
+          "package_name": "com.maciek.facebooktest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522943511763-c2cu1sobo0dog519pa37pjfb8q6oa7sd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maciek.facebooktest",
+            "certificate_hash": "701312b02b6d1205df04ce91e9a5441e3cabcff4"
+          }
+        },
+        {
+          "client_id": "522943511763-1jq13b6rqn7h2hgcnfn18d6krodq62ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8XglV-086lc1fSQmdijisLo562VuBB08"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522943511763-1jq13b6rqn7h2hgcnfn18d6krodq62ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
