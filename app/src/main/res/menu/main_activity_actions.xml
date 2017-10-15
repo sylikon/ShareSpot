@@ -10,6 +10,7 @@
 
         android:icon="@drawable/messenger_button_white_bg_round"
 
-        android:title="coś tam jakieś opcje" />
+        android:title="Dodaj miejsce postojowe" />
+
 
 </menu>

@@ -1,8 +1,9 @@
-package com.maciek.facebooktest;
+package com.maciek.facebooktest.Login;
 
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +31,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.maciek.facebooktest.Abstract.Portrait;
+import com.maciek.facebooktest.R;
+import com.maciek.facebooktest.UserPackage.Spot;
+import com.maciek.facebooktest.Workspace.RegistrationBackground;
+import com.maciek.facebooktest.Workspace.SpotMenu;
+import com.maciek.facebooktest.UserPackage.User;
+import com.maciek.facebooktest.Workspace.WorkActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseDatabase database;
     DatabaseReference myRef;
 
+
     private Spot spot;
     private User user;
 
@@ -72,14 +80,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
             finish();
-            startActivity(new Intent(this,WorkActivity.class));
+            startActivity(new Intent(this, SpotMenu.class));
         }
 
         userMap = new HashMap<>();
@@ -164,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(getApplicationContext(),WorkActivity.class));
+                            startActivity(new Intent(getApplicationContext(), RegistrationBackground.class));
 
                         } else {
                             // If sign in fails, display a message to the user.

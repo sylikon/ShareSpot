@@ -1,4 +1,4 @@
-package com.maciek.facebooktest;
+package com.maciek.facebooktest.UserPackage;
 
 /**
  * Created by Geezy on 21.09.2017.
@@ -7,12 +7,10 @@ package com.maciek.facebooktest;
 public class User {
 
     private String name;
-    private boolean hasSpot;
     private Spot spot;
 
-    public User(String name, boolean hasSpot, Spot spot) {
+    public User(String name, Spot spot) {
         this.name = name;
-        this.hasSpot = hasSpot;
         this.spot = spot;
     }
 
@@ -27,16 +25,9 @@ public class User {
         this.name = name;
     }
 
-    public void setHasSpot(boolean hasSpot) {
-        this.hasSpot = hasSpot;
-    }
 
     public void setSpot(Spot spot) {
         this.spot = spot;
-    }
-
-    public boolean isHasSpot() {
-        return hasSpot;
     }
 
     public Spot getSpot() {

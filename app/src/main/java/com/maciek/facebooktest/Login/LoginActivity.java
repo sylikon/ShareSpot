@@ -1,11 +1,13 @@
-package com.maciek.facebooktest;
+package com.maciek.facebooktest.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,9 +24,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.maciek.facebooktest.R;
+import com.maciek.facebooktest.Workspace.RegistrationBackground;
+import com.maciek.facebooktest.Workspace.SpotMenu;
+import com.maciek.facebooktest.UserPackage.User;
+import com.maciek.facebooktest.Workspace.WorkActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+    public LoginActivity() {
+
+    }
 
     private Button buttonSingup;
     private EditText editTextUsername;
@@ -37,6 +48,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ProgressDialog progressDialog;
 
     private FirebaseAuth mAuth;
+
+    private String TAG = "Dobrolin test";
 
 
     @Override
@@ -57,7 +70,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         databaseReference =firebaseDatabase.getReference("/users");
 
         mAuth = FirebaseAuth.getInstance();
-
 
     }
 
@@ -87,8 +99,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //user logged in
                     progressDialog.hide();
                     //Toast.makeText(LoginActivity.this, "User Logged in", Toast.LENGTH_SHORT).show();
-                    isRegistered();
-                    startActivity(new Intent(getApplicationContext(), WorkActivity.class));
+                    //isRegistered();
+                    startActivity(new Intent(getApplicationContext(), RegistrationBackground.class));
+
                 }else {
                     //user failed logging in
                     progressDialog.hide();
@@ -114,26 +127,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public boolean isRegistered(){
         final FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+
+        ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot userSnapshot:dataSnapshot.getChildren() ){
-                    User user = userSnapshot.getValue(User.class);
-                    if(user.getName()!="")
+                User user = dataSnapshot.getValue(User.class);
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    if (currentFirebaseUser.getUid().equals(data.getKey())) {
+                        Log.i(TAG, "znaleziono w bazie");
                         startActivity(new Intent(getApplicationContext(), SpotMenu.class));
-
+                    }
                 }
-
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
-
+        };
+        databaseReference.addListenerForSingleValueEvent(userListener);
 
         return false;
+
     }
 
 

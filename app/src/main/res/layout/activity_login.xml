@@ -4,17 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.maciek.facebooktest.LoginActivity">
+    android:background="@color/WhiteSmoke"
+    tools:context="com.maciek.facebooktest.Login.LoginActivity">
+
+    <include
+        layout="@layout/my_toolbar"
+        android:id="@+id/my_toolbar"></include>
 
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editTextPassword"
-        android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="email"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@color/SteelBlue"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -23,27 +30,51 @@
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
-        android:layout_above="@+id/textViewLogin"
-        android:layout_centerHorizontal="true"
+        android:textColor="@color/SteelBlue"
+        android:textSize="18sp"
+        android:layout_below="@+id/editTextUsername"
         android:layout_alignStart="@+id/editTextUsername" />
 
     <TextView
         android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/editTextPassword"
+
         android:text="Kliknij tu żeby się zarejestrować"
-        android:textSize="10sp" />
+        android:textColor="@color/SteelBlue"
+        android:textSize="10sp"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_toEndOf="@+id/imageView" />
 
     <Button
         android:id="@+id/buttonSingup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewLogin"
-        android:layout_centerHorizontal="true"
+        android:text="Zaloguj"
+        style="@style/buttonStyle"
+        android:background="@drawable/button"
         android:layout_marginTop="12dp"
-        android:text="Zaloguj" />
+        android:layout_below="@+id/textViewLogin"
+        android:layout_alignStart="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/dobro"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dobrolin Spot"
+        android:textColor="@color/SteelBlue"
+        android:textSize="28sp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

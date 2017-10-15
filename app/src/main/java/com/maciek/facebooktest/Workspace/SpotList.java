@@ -1,13 +1,18 @@
-package com.maciek.facebooktest;
+package com.maciek.facebooktest.Workspace;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.maciek.facebooktest.R;
+import com.maciek.facebooktest.UserPackage.User;
 
 import java.util.List;
 
@@ -41,7 +46,8 @@ public class SpotList extends ArrayAdapter<User> {
         User user = userList.get(position);
 
         textViewName.setText(user.getName());
-        textViewSpotNumber.setText(String.valueOf(user.getSpot().getNumber()) +" cena: " + String.valueOf(user.getSpot().getPrice()) +" PLN/msc");
+        textViewName.setTextColor(ContextCompat.getColor(context, R.color.MarciaBlue));
+        textViewSpotNumber.setText(user.getSpot().getNumber() + " cena: " + String.valueOf(user.getSpot().getPrice()) + " PLN/msc");
         textViewContact.setText("tutaj jakiśtam kontakt");
         return listViewItem;
     }
